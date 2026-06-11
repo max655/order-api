@@ -42,67 +42,92 @@ A RESTful API for managing users and orders, built with FastAPI, PostgreSQL, JWT
 This API uses JWT (JSON Web Tokens).
 
 ### Example header:
+
 ```http
 Authorization: Bearer <your_token>
+```
+
+---
 
 ## ⚙️ Getting Started
 
-1. Clone repository
+### 1. Clone repository
+
+```bash
 git clone https://github.com/USERNAME/order-api.git
 cd order-api
-2. Run with Docker (recommended)
+```
+
+---
+
+### 2. Run with Docker (recommended)
+
+```bash
 docker compose up --build
-3. Run locally (without Docker)
+```
+
+---
+
+### 3. Run locally (without Docker)
+
 Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
 Start server:
+
+```bash
 uvicorn main:app --reload
+```
+
+---
 
 ## 🗄️ Database
 
 PostgreSQL is used as the main database.
 
 Tables:
-users
-orders
-🔄 Database Migrations (Alembic)
+- users
+- orders
+
+---
+
+## 🔄 Database Migrations (Alembic)
 
 Create migration:
 
+```bash
 alembic revision --autogenerate -m "initial migration"
+```
 
 Apply migrations:
 
+```bash
 alembic upgrade head
-🧪 Running Tests
-pytest -v
-🐳 Docker Compose
-services:
-  api:
-    build: .
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
+```
 
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: orders_db
-    ports:
-      - "5432:5432"
+---
+
+## 🧪 Running Tests
+
+```bash
+pytest -v
+```
+
+---
 
 ## 🔁 CI/CD Pipeline
 
 This project uses GitHub Actions for Continuous Integration.
 
 On every push or pull request:
-
 - Install dependencies
 - Start PostgreSQL service
 - Run tests with pytest
+
+---
 
 ## 📡 API Endpoints
 
