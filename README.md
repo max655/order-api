@@ -45,7 +45,8 @@ This API uses JWT (JSON Web Tokens).
 ```http
 Authorization: Bearer <your_token>
 
-⚙️ Getting Started
+## ⚙️ Getting Started
+
 1. Clone repository
 git clone https://github.com/USERNAME/order-api.git
 cd order-api
@@ -56,7 +57,8 @@ Install dependencies:
 pip install -r requirements.txt
 Start server:
 uvicorn main:app --reload
-🗄️ Database
+
+## 🗄️ Database
 
 PostgreSQL is used as the main database.
 
@@ -91,21 +93,25 @@ services:
       POSTGRES_DB: orders_db
     ports:
       - "5432:5432"
-🔁 CI/CD Pipeline
+
+## 🔁 CI/CD Pipeline
 
 This project uses GitHub Actions for Continuous Integration.
 
 On every push or pull request:
 
-Install dependencies
-Start PostgreSQL service
-Run tests with pytest
-📡 API Endpoints
-Authentication
-POST /users/register
-POST /users/login
-Orders
-POST /orders
-GET /orders/{id}
-PUT /orders/{id}
-DELETE /orders/{id}
+- Install dependencies
+- Start PostgreSQL service
+- Run tests with pytest
+
+## 📡 API Endpoints
+
+### Authentication
+- POST /users/register
+- POST /users/login
+
+### Orders
+- POST /orders
+- GET /orders/{id}
+- PUT /orders/{id}
+- DELETE /orders/{id}
